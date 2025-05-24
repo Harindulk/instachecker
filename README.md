@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InstaChecker
 
-## Getting Started
+A privacy-focused tool to find Instagram accounts that don't follow you back. All processing happens locally in your browser - we never store or transmit your data.
 
-First, run the development server:
+[Live Demo](https://instachecker.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🔒 Privacy First: All processing happens locally in your browser
+- 📱 Modern UI: Clean, responsive design with RetroUI styling
+- 🔍 Easy to Use: Just upload your Instagram data files
+- 📊 Instant Results: See who doesn't follow you back in seconds
+- 📥 Export: Save results as a text file
+- 🎨 Beautiful Design: Retro-styled UI with modern touches
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Go to Instagram > Settings > Account Centre
+2. Click on "Your information and permissions"
+3. Select "Download or transfer information"
+4. Choose your Instagram account
+5. Select "Some of your information"
+6. Choose "Followers and following"
+7. Click "Download" and wait for the files
+8. Upload the files to InstaChecker
+9. Get instant results!
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18+
+- npm or yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Setup
 
-## Deploy on Vercel
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Harindulk/instachecker.git
+   cd instachecker
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Built With
+
+- [Next.js](https://nextjs.org/) - React framework
+- [TailwindCSS](https://tailwindcss.com/) - CSS framework
+- [RetroUI](https://www.retroui.dev/) - UI design inspiration
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Privacy
+
+We take privacy seriously:
+- All data processing happens in your browser
+- We never store or transmit your data
+- No tracking or analytics
+- Open source for transparency
+
+## Support
+
+If you encounter any issues or have questions, please [open an issue](https://github.com/Harindulk/instachecker/issues).
