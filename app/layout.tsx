@@ -1,13 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'InstaChecker - Find Who Doesn\'t Follow You Back',
-  description: 'Easily discover which Instagram accounts don\'t follow you back with InstaChecker.',
+  description: 'A privacy-focused tool to find Instagram accounts that don\'t follow you back. All processing happens locally in your browser.',
   keywords: 'Instagram, followers, following, unfollowers, social media, Instagram analytics',
   openGraph: {
     title: 'InstaChecker - Find Who Doesn\'t Follow You Back',

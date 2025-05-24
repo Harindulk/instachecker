@@ -160,4 +160,12 @@ export async function filterCelebrityAccounts(accounts: string[]): Promise<strin
 
   console.log(`Filtering complete. Kept ${filteredAccounts.length} accounts out of ${accounts.length} total`);
   return filteredAccounts;
+}
+
+/**
+ * Placeholder for future AI-based filtering implementation.
+ * Currently returns all usernames without filtering.
+ */
+export async function filterBusinessAccounts(usernames: string[]): Promise<string[]> {
+  return usernames;
 } 

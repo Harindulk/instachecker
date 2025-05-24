@@ -3,13 +3,6 @@
 import { useState, useEffect } from 'react';
 import FileUpload from './components/FileUpload';
 import ResultsDisplay from './components/ResultsDisplay';
-import Footer from './components/Footer';
-
-interface InstagramData {
-  string_list_data: Array<{
-    value: string;
-  }>;
-}
 
 export default function Home() {
   const [nonFollowBackAccounts, setNonFollowBackAccounts] = useState<string[]>([]);
@@ -41,19 +34,20 @@ export default function Home() {
         sampleFollowing: followingData.slice(0, 3)
       });
 
-      // Find accounts that don't follow back
-      const followers = new Set(followersData);
-      const nonFollowBack = followingData.filter(username => !followers.has(username));
+      // Find accounts that you follow but don't follow you back
+      const nonFollowBacks = followingData.filter(
+        following => !followersData.includes(following)
+      );
 
       console.log('Processing results:', {
-        totalFollowers: followers.size,
+        totalFollowers: followersData.length,
         totalFollowing: followingData.length,
-        nonFollowBackCount: nonFollowBack.length
+        nonFollowBackCount: nonFollowBacks.length
       });
 
       // Save results to local storage
-      localStorage.setItem('instachecker_results', JSON.stringify(nonFollowBack));
-      setNonFollowBackAccounts(nonFollowBack);
+      localStorage.setItem('instachecker_results', JSON.stringify(nonFollowBacks));
+      setNonFollowBackAccounts(nonFollowBacks);
       setError(null);
     } catch (error) {
       console.error('Error processing data:', error);
@@ -201,7 +195,21 @@ export default function Home() {
           </div>
         </div>
 
-        <Footer />
+        {/* Footer Links */}
+        <div className="mt-8 text-center space-x-4">
+          <a
+            href="/terms"
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            Terms of Service
+          </a>
+          <a
+            href="/disclaimer"
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            Disclaimer
+          </a>
+        </div>
       </div>
     </main>
   );

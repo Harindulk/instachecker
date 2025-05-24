@@ -15,10 +15,6 @@ interface InstagramDataItem {
   }>;
 }
 
-interface InstagramFollowingData {
-  relationships_following: InstagramDataItem[];
-}
-
 export default function FileUpload({ onFilesSelected }: FileUploadProps) {
   const [error, setError] = useState<string | null>(null);
   const [files, setFiles] = useState<{ [key: string]: File }>({});
