@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import FileUpload from './components/FileUpload';
 import ResultsDisplay from './components/ResultsDisplay';
+import Image from 'next/image';
 import {
   Accordion,
   AccordionContent,
@@ -191,8 +192,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Go to "Your information and permissions" and look for the "Download your information" section</p>
-                  <img src="/instructions/step3.png" alt="Navigate to Information and Permissions" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Go to &quot;Your information and permissions&quot; and look for the &quot;Download your information&quot; section</p>
+                  <Image
+                    src="/instructions/step3.png"
+                    alt="Navigate to Information and Permissions"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -207,8 +214,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Click on the "Download or transfer information" button</p>
-                  <img src="/instructions/step4.png" alt="Click Download Information" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Click on the &quot;Download or transfer information&quot; button</p>
+                  <Image
+                    src="/instructions/step4.png"
+                    alt="Click Download Information"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -239,8 +252,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Click on "Select some of your information"</p>
-                  <img src="/instructions/step6.png" alt="Select Information Type" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Click on &quot;Select some of your information&quot;</p>
+                  <Image
+                    src="/instructions/step6.png"
+                    alt="Select Information Type"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -255,8 +274,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Find and check the boxes for "Followers" and "Following", then click "Next"</p>
-                  <img src="/instructions/step7.png" alt="Select Followers and Following" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Find and check the boxes for &quot;Followers&quot; and &quot;Following&quot;, then click &quot;Next&quot;</p>
+                  <Image
+                    src="/instructions/step7.png"
+                    alt="Select Followers and Following"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -271,8 +296,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Select "Download to device"</p>
-                  <img src="/instructions/step8.png" alt="Download to Device" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Select &quot;Download to device&quot;</p>
+                  <Image
+                    src="/instructions/step8.png"
+                    alt="Download to Device"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -288,12 +319,18 @@ export default function Home() {
               <AccordionContent>
                 <div className="pt-2 pb-4">
                   <ul className="list-disc ml-6 mb-3 space-y-1">
-                    <li>Set Date range to "All time"</li>
+                    <li>Set Date range to &quot;All time&quot;</li>
                     <li>Enter your email address</li>
-                    <li>Select "JSON" as the format</li>
-                    <li>Click "Create files"</li>
+                    <li>Select &quot;JSON&quot; as the format</li>
+                    <li>Click &quot;Create files&quot;</li>
                   </ul>
-                  <img src="/instructions/step9.png" alt="Configure Settings" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <Image
+                    src="/instructions/step9.png"
+                    alt="Configure Settings"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
