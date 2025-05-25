@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -12,50 +13,50 @@ const Instructions = () => {
     },
     {
       label: 'Access Information Download',
-      description: 'Go to "Your information and permissions" and look for the "Download your information" section',
+      description: 'Go to &quot;Your information and permissions&quot; and look for the &quot;Download your information&quot; section',
       image: '/instructions/step3.png'
     },
     {
       label: 'Start Download Process',
-      description: 'Click on the "Download or transfer information" button',
+      description: 'Click on the &quot;Download or transfer information&quot; button',
       image: '/instructions/step4.png'
     },
     {
       label: 'Select Instagram Account',
-      description: 'Choose the Instagram account you want to download data from and click "Next" to proceed',
+      description: 'Choose the Instagram account you want to download data from and click &quot;Next&quot; to proceed',
       image: '/instructions/step5.png'
     },
     {
       label: 'Choose Information Type',
-      description: 'Click on "Select some of your information" to choose specific data to download',
+      description: 'Click on &quot;Select some of your information&quot; to choose specific data to download',
       image: '/instructions/step6.png'
     },
     {
       label: 'Select Followers and Following',
-      description: 'Find and check the boxes for "Followers" and "Following", then click "Next" to continue',
+      description: 'Find and check the boxes for &quot;Followers&quot; and &quot;Following&quot;, then click &quot;Next&quot; to continue',
       image: '/instructions/step7.png'
     },
     {
       label: 'Choose Download Method',
-      description: 'Select "Download to device" option',
+      description: 'Select &quot;Download to device&quot; option',
       image: '/instructions/step8.png'
     },
     {
       label: 'Configure Download Settings',
-      description: `Set Date range to "All time"
+      description: `Set Date range to &quot;All time&quot;
 Enter your email address where you want to receive the download link
-Select "JSON" as the format
-Click "Create files"`,
+Select &quot;JSON&quot; as the format
+Click &quot;Create files&quot;`,
       image: '/instructions/step8.png'
     },
     {
       label: 'Final Steps',
       description: `1. Wait 5-10 minutes for Instagram to process your request
-2. You'll receive an email from Instagram with the download link
+2. You&apos;ll receive an email from Instagram with the download link
 3. Download the ZIP file from the email
 4. Extract the ZIP file
-5. Navigate to 'connections > followers_and_following' folder
-6. You'll find two files: followers_1.json and following.json`,
+5. Navigate to &apos;connections &gt; followers_and_following&apos; folder
+6. You&apos;ll find two files: followers_1.json and following.json`,
       image: null
     }
   ];
@@ -95,9 +96,11 @@ Click "Create files"`,
                 
                 {step.image && (
                   <div className="mt-4 rounded-lg overflow-hidden border">
-                    <img
+                    <Image
                       src={step.image}
                       alt={`Step ${index + 1}`}
+                      width={800}
+                      height={600}
                       className="w-full h-auto object-contain"
                     />
                   </div>

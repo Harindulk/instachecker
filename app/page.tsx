@@ -350,7 +350,7 @@ export default function Home() {
                     <li>Check your email for the download link</li>
                     <li>Download and extract the ZIP file</li>
                     <li>Find the files in: connections {'>'} followers_and_following</li>
-                    <li>You&apos;ll see: followers_1.json and following.json</li>
+                    <li>You&apos;ll find two files: followers_1.json and following.json</li>
                   </ul>
                 </div>
               </AccordionContent>
