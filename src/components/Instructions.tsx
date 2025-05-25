@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Card } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Card } from "../../components/ui/card";
+import { ScrollArea } from "../../components/ui/scroll-area";
 
 const Instructions = () => {
   const steps = [
