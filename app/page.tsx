@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import FileUpload from './components/FileUpload';
 import ResultsDisplay from './components/ResultsDisplay';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../components/ui/accordion"
 
 export default function Home() {
   const [nonFollowBackAccounts, setNonFollowBackAccounts] = useState<string[]>([]);
@@ -144,41 +150,176 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-4 text-center">
             How to get your Instagram data
           </h2>
-          <ol className="space-y-4">
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">1</span>
-              <span>Go to Instagram {'>'} Settings {'>'} Account Centre</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">2</span>
-              <span>Click on &quot;Your information and permissions&quot;</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">3</span>
-              <span>Select &quot;Download or transfer information&quot;</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">4</span>
-              <span>Choose your Instagram account</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">5</span>
-              <span>Select &quot;Some of your information&quot;</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">6</span>
-              <span>Tick &quot;Followers and following&quot;, select &quot;JSON&quot; format, and click &quot;Download to device&quot;</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">7</span>
-              <span>Check your email (the one selected in Account Centre) - you&apos;ll receive a download link within 5 minutes</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">8</span>
-              <span>Click the link in your email to download the ZIP file containing your data</span>
-            </li>
-          </ol>
           
+          <Accordion 
+            type="multiple" 
+            defaultValue={["step-1", "step-2", "step-3", "step-4", "step-5", "step-6", "step-7", "step-8", "step-9"]} 
+            className="space-y-4"
+          >
+            {/* Step 1 */}
+            <AccordionItem value="step-1" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">1</span>
+                  <span className="font-semibold text-left">Access Instagram Account Center</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">
+                    Go to Instagram Settings and Account Center, or directly visit:{" "}
+                    <a 
+                      href="https://accountscenter.instagram.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-purple-600 hover:text-purple-700 underline"
+                    >
+                      Instagram Account Center
+                    </a>
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 2 */}
+            <AccordionItem value="step-2" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">2</span>
+                  <span className="font-semibold text-left">Access Information Download</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Go to "Your information and permissions" and look for the "Download your information" section</p>
+                  <img src="/instructions/step3.png" alt="Navigate to Information and Permissions" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 3 */}
+            <AccordionItem value="step-3" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">3</span>
+                  <span className="font-semibold text-left">Start Download Process</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Click on the "Download or transfer information" button</p>
+                  <img src="/instructions/step4.png" alt="Click Download Information" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 4 */}
+            <AccordionItem value="step-4" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">4</span>
+                  <span className="font-semibold text-left">Select Instagram Account</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Choose your Instagram account and click "Next"</p>
+                  <img src="/instructions/step5.png" alt="Select Account" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 5 */}
+            <AccordionItem value="step-5" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">5</span>
+                  <span className="font-semibold text-left">Choose Information Type</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Click on "Select some of your information"</p>
+                  <img src="/instructions/step6.png" alt="Select Information Type" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 6 */}
+            <AccordionItem value="step-6" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">6</span>
+                  <span className="font-semibold text-left">Select Followers and Following</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Find and check the boxes for "Followers" and "Following", then click "Next"</p>
+                  <img src="/instructions/step7.png" alt="Select Followers and Following" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 7 */}
+            <AccordionItem value="step-7" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">7</span>
+                  <span className="font-semibold text-left">Choose Download Method</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <p className="mb-3">Select "Download to device"</p>
+                  <img src="/instructions/step8.png" alt="Download to Device" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 8 */}
+            <AccordionItem value="step-8" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">8</span>
+                  <span className="font-semibold text-left">Configure Download Settings</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <ul className="list-disc ml-6 mb-3 space-y-1">
+                    <li>Set Date range to "All time"</li>
+                    <li>Enter your email address</li>
+                    <li>Select "JSON" as the format</li>
+                    <li>Click "Create files"</li>
+                  </ul>
+                  <img src="/instructions/step9.png" alt="Configure Settings" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Step 9 */}
+            <AccordionItem value="step-9" className="border-2 border-black rounded-lg px-4">
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <span className="flex-none flex items-center justify-center w-6 h-6 bg-black text-white rounded-full font-medium text-sm">9</span>
+                  <span className="font-semibold text-left">Final Steps</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pt-2 pb-4">
+                  <ul className="list-disc ml-6 space-y-1">
+                    <li>Wait 5-10 minutes for Instagram to process your request</li>
+                    <li>Check your email for the download link</li>
+                    <li>Download and extract the ZIP file</li>
+                    <li>Find the files in: connections {'>'} followers_and_following</li>
+                    <li>You&apos;ll see: followers_1.json and following.json</li>
+                  </ul>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
           {/* Privacy Notice */}
           <div className="mt-6 p-4 bg-green-50 border-2 border-green-500 rounded-lg">
             <div className="flex items-start gap-3">
