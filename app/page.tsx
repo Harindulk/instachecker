@@ -236,8 +236,14 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="pt-2 pb-4">
-                  <p className="mb-3">Choose your Instagram account and click "Next"</p>
-                  <img src="/instructions/step5.png" alt="Select Account" className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" />
+                  <p className="mb-3">Choose your Instagram account and click &quot;Next&quot;</p>
+                  <Image
+                    src="/instructions/step5.png"
+                    alt="Select Account"
+                    width={800}
+                    height={600}
+                    className="rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  />
                 </div>
               </AccordionContent>
             </AccordionItem>
