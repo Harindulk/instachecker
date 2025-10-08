@@ -34,9 +34,9 @@ export default function FileUpload({ onFilesSelected }: FileUploadProps) {
           console.error('Invalid following data structure:', data);
           throw new Error('Invalid following.json format');
         }
-        const usernames = data.relationships_following.map((item: InstagramDataItem) => 
-          item.string_list_data[0].value
-        );
+        const usernames = data.relationships_following
+          .map((item: InstagramDataItem) => item.string_list_data?.[0]?.value)
+          .filter((username: unknown): username is string => typeof username === 'string' && username.length > 0);
         console.log('Extracted following usernames:', usernames.slice(0, 3), '... (total:', usernames.length, ')');
         return usernames;
       }
@@ -46,9 +46,9 @@ export default function FileUpload({ onFilesSelected }: FileUploadProps) {
         console.error('Invalid followers data structure:', data);
         throw new Error('Invalid followers.json format');
       }
-      const usernames = data.map((item: InstagramDataItem) => 
-        item.string_list_data[0].value
-      );
+      const usernames = data
+        .map((item: InstagramDataItem) => item.string_list_data?.[0]?.value)
+        .filter((username: unknown): username is string => typeof username === 'string' && username.length > 0);
       console.log('Extracted follower usernames:', usernames.slice(0, 3), '... (total:', usernames.length, ')');
       return usernames;
       

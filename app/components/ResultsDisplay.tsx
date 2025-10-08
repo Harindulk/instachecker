@@ -11,7 +11,10 @@ export default function ResultsDisplay({ nonFollowBackAccounts }: ResultsDisplay
 
   // Filter and sort accounts
   const filteredAndSortedAccounts = useMemo(() => {
-    let results = nonFollowBackAccounts;
+    // Filter out null, undefined, and empty strings as a safety measure
+    let results = nonFollowBackAccounts.filter(
+      account => account && typeof account === 'string' && account.length > 0
+    );
     
     // Filter by search term
     if (searchTerm) {
@@ -20,8 +23,10 @@ export default function ResultsDisplay({ nonFollowBackAccounts }: ResultsDisplay
       );
     }
 
-    // Sort accounts
+    // Sort accounts with null safety
     return [...results].sort((a, b) => {
+      // Additional safety check
+      if (!a || !b) return 0;
       if (sortOrder === 'asc') {
         return a.localeCompare(b);
       }
@@ -100,7 +105,7 @@ export default function ResultsDisplay({ nonFollowBackAccounts }: ResultsDisplay
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full border-2 border-black overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg">
-                  {account[0].toUpperCase()}
+                  {account && account.length > 0 ? account[0].toUpperCase() : '?'}
                 </div>
                 <span className="font-medium">@{account}</span>
               </div>

@@ -42,9 +42,8 @@ export default function Home() {
       });
 
       // Find accounts that you follow but don't follow you back
-      const nonFollowBacks = followingData.filter(
-        following => !followersData.includes(following)
-      );
+      const nonFollowBacks = followingData
+        .filter(following => following && typeof following === 'string' && !followersData.includes(following));
 
       console.log('Processing results:', {
         totalFollowers: followersData.length,
