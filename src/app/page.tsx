@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 interface User {
   title: string;
-  media_list_data: any[];
+  media_list_data: unknown[];
   string_list_data: {
     href: string;
     value: string;
@@ -94,8 +94,9 @@ export default function Home() {
 
       console.log('Files processed successfully:', processedData);
       processResults(processedData);
-    } catch (err: any) {
-      setError(`Error processing files: ${err.message}`);
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
+      setError(`Error processing files: ${errorMessage}`);
       console.error(err);
     }
   };
